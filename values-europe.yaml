@@ -3,6 +3,8 @@ customers:
   gooogle: fsfvv-7e89-f32d3d-a63d-434ffe4
   raam: fsgg-afc5-46bc-9d98-vvsvsvv
   shaam: gfbbbf-3b0f-46c7-afa3-gfg
+  test: 42db0d95-e957--847f-cadedbb74b28
+
 
 certIssuer:
   enabled: true
