@@ -1,3 +1,28 @@
-{
-	"key": "value"
-}
+certIssuer:
+  email: ops@test.io
+  enabled: true
+  ingressClassName: nginx
+customers:
+  gooogle: fsfvv-7e89-f32d3d-a63d-434ffe4
+  meeta: ewedf-de7f-sfff-9b5c-frdcvsv
+  raam: fsgg-afc5-46bc-9d98-vvsvsvv
+  shaam: gfbbbf-3b0f-46c7-afa3-gfg
+  test: cdckefm3-d3d-d3d3dnxds6-cdec4
+router:
+  ingress:
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      kubernetes.io/tls-acme: "true"
+      nginx.ingress.kubernetes.io/backend-protocol: GRPC
+    className: nginx
+    enabled: true
+    hosts:
+    - host: ingest-eu.testw.cloud
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        port: 443
+    tls:
+    - hosts:
+      - ingest-eu.testw.cloud
+      secretName: ingest-eu.testw.cloud
