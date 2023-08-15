@@ -1,0 +1,29 @@
+customers:
+  meeta: ewedf-de7f-sfff-9b5c-frdcvsv
+  gooogle: fsfvv-7e89-f32d3d-a63d-434ffe4
+  raam: fsgg-afc5-46bc-9d98-vvsvsvv
+  shaam: gfbbbf-3b0f-46c7-afa3-gfg
+
+certIssuer:
+  enabled: true
+  email: ops@test.io
+  ingressClassName: nginx
+
+router:
+  ingress:
+    enabled: true
+    className: nginx
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      kubernetes.io/tls-acme: "true"
+      nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    hosts:
+      - host: ingest-eu.testw.cloud
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            port: 443
+    tls:
+      - secretName: ingest-eu.testw.cloud
+        hosts:
+          - ingest-eu.testw.cloud
